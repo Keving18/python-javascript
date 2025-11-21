@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Productos</title>
+    <script defer src="/static/script.js"></script>
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+
+<body>
+    <h1>Gestión de Productos</h1>
+
+    <form id="form-product" enctype="multipart/form-data">
+        <input type="text" id="nombre-producto" placeholder="Nombre del producto" required />
+        <input type="number" id="precio-producto" placeholder="Precio del producto" required />
+        <input type="file" id="imagen-producto" accept="image/*" required />
+        <button type="submit">Agregar Producto</button>
+    </form>
+
+    <div id="loader" style="display: none; margin:20px 0;">
+        <img src="https://i.gifer.com/ZZ5H.gif" alt="Cargando..." width="50" />
+    </div>
+    <div id="product-list">
+    </div>
+
+
+</body>
+
+</html>

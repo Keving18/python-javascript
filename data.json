@@ -1,0 +1,97 @@
+{
+    "productos": [
+        {
+            "nombre": "Refrigeradora",
+            "precio": 5000,
+            "id": 1,
+            "habilitado": true
+        },
+        {
+            "nombre": "Smartphone",
+            "precio": 900,
+            "id": 2,
+            "habilitado": false
+        },
+        {
+            "nombre": "iPad",
+            "precio": 1200,
+            "id": 3,
+            "habilitado": true
+        },
+        {
+            "nombre": "iPhone",
+            "precio": 1300,
+            "id": 4,
+            "habilitado": true
+        },
+        {
+            "nombre": "iWatch",
+            "precio": 500,
+            "id": 5,
+            "habilitado": true
+        },
+        {
+            "nombre": "Smart TV",
+            "precio": 4000,
+            "id": 6,
+            "habilitado": true
+        },
+        {
+            "nombre": "Licuadora",
+            "precio": 200,
+            "id": 7,
+            "habilitado": true
+        },
+        {
+            "id": 8,
+            "nombre": "iPhone 17",
+            "precio": 2300.0,
+            "imagen": "static/uploads/iphone17.webp",
+            "habilitado": true,
+            "comentarios": [
+                {
+                    "usuario": "Francisco Suarez",
+                    "texto": "Producto nuevo de muy buena calidad"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "nombre": "iPad Air",
+            "precio": 3000.0,
+            "imagen": "static/uploads/ipad_air.avif",
+            "habilitado": true
+        },
+        {
+            "id": 10,
+            "nombre": "iPhone 16",
+            "precio": 1000.0,
+            "imagen": "static/uploads/iphone17.webp",
+            "habilitado": true
+        },
+        {
+            "id": 11,
+            "nombre": "Formato Portrait",
+            "precio": 100.0,
+            "imagen": "static/uploads/portrait.jpg",
+            "habilitado": true
+        },
+        {
+            "id": 12,
+            "nombre": "Formato landscape",
+            "precio": 200.0,
+            "imagen": "static/uploads/landscape.jpg",
+            "habilitado": true,
+            "comentarios": [
+                {
+                    "usuario": "Juan Perez",
+                    "texto": "Excelente producto, muy satisfecho con la compra."
+                },
+                {
+                    "usuario": "Maria Gomez",
+                    "texto": "La calidad es buena, pero el precio es un poco alto."
+                }
+            ]
+        }
+    ]
+}
