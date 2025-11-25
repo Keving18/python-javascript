@@ -34,6 +34,7 @@ export async function obtenerComentarios(id) {
 }
 
 export async function agregarComentario(id, data) {
+    console.log("Agregar comentario API:", id, data);
     const response = await fetch(`/productos/${id}/comentarios`, {
         method: "POST",
         headers: {

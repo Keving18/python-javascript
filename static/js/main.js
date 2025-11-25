@@ -43,8 +43,12 @@ if (formComentario) {
         const idProducto = document.getElementById("idProducto");
         const usuario = document.getElementById("usuario-comentario");
         const texto = document.getElementById("texto-comentario");
+
         try {
-            await agregarComentario(idProducto.value, usuario.value, texto.value);
+            await agregarComentario(idProducto.value, {
+                usuario: usuario.value,
+                texto: texto.value,
+            });
             mostrarMensaje("Comentario agregado correctamente.");
             limpiarFormularioComentario();
             cargarProductos();

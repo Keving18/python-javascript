@@ -1,11 +1,17 @@
 {
     "productos": [
         {
-            "id": 1,
-            "nombre": "iPhone 17",
-            "precio": 10000.0,
-            "imagen": "static/uploads\\Gemini_Generated_Image_tfm33ktfm33ktfm3.png",
-            "habilitado": true
+            "id": 2,
+            "nombre": "iPad",
+            "precio": 3000.0,
+            "imagen": "static/uploads/ipad_air.avif",
+            "habilitado": true,
+            "comentarios": [
+                {
+                    "usuario": "Kevin",
+                    "texto": "Hola, muy buen producto"
+                }
+            ]
         }
     ]
 }

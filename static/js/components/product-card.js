@@ -26,28 +26,46 @@ class ProductCard extends HTMLElement {
                 .card {
                     border: 1px solid #ccc;
                     padding: 10px;
-                    margin: 5px 0;
-                    border-radius: 5px;
+                    margin: 6px 0;
+                    border-radius: 8px;
                     background-color: ${habilitado ? "#fff" : "#f8d7da"};
-                    display: flex;
-                    justify-content: space-between;
+                    display: grid;
+                    grid-template-columns: auto 1fr auto;
+                    gap: 10px;
                     align-items: center;
                 }
 
                 img {
                     width: 60px;
                     height: 60px;
-                    border-radius: 5px;
+                    border-radius: 6px;
                     object-fit: cover;
+                    background: #f3f4f6
+                }
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+
+                .price {
+                    font-weight: bold;
+                    color: #16a34a;
                 }
 
                 button {
-                    background: crimson;
+                    background: #dc2626;
                     color: white;
                     border: none;
-                    padding: 5px 10px;
-                    border-radius: 3px;
+                    padding: 6px 10px;
+                    border-radius: 4px;
                     cursor: pointer;
+                    font-size: 0.8rem;
+                }
+
+                button:hover {
+                    background: #b91c1c;
                 }
                 
                 #btnHabilitar {
@@ -55,28 +73,41 @@ class ProductCard extends HTMLElement {
                 }
 
                 .comentarios {
-                    margin-top: 10px;
-                    font-size: 0.9em;
-                    color: #555;
+                    grid-column: 1 / 4;
+                    margin-top: 6px;
+                    font-size: 0.8rem;
+                    color: #374151;
                 }
 
                 .comentarios p {
-                    margin: 5px 0;
+                    margin: 2px 0;
+                }
+
+                .comentarios em {
+                    color: #9ca3af;
+                }
+                 
+                .id {
+                    font-size: 0.7rem;
+                    color: #6b7280;
                 }
             </style>
-            <div>
+            
                 <div class="card">
                     <img src="${imagen}" alt="${nombre}" />
-                    <span><strong>${nombre}</strong> - Q${precio}</span>
-                    <div>
-                        <button id="btnHabilitar">${
-                            habilitado ? "Deshabilitar" : "Habilitar"
-                        }</button>
+                    <div class="info">
+                        <span><strong>${nombre}</strong></span>
+                        <span class="price">Q${precio}</span>
+                        <span class="id">ID: ${id}</span>
+                    </div>
+                    <div class="actions">
+                        <button id="btnHabilitar">
+                        ${habilitado ? "Deshabilitar" : "Habilitar"}
+                        </button>
                         <button id="btnEliminar">Eliminar</button>
                     </div>
+                    <div id="comentarios" class="comentarios">Cargando comentarios...</div>
                 </div>
-                <div id="comentarios" class="comentarios">Cargando comentarios...</div>
-            </div>
         `;
 
         // Cargar comentarios
@@ -86,11 +117,9 @@ class ProductCard extends HTMLElement {
             comentariosDiv.innerHTML = "<em>No hay comentarios.</em>";
         } else {
             comentariosDiv.innerHTML =
-                "<strong>Comentarios:</strong><ul>" +
                 comentarios
                     .map((c) => `<p><strong>${c.usuario}</strong>: ${c.texto}</p>`)
-                    .join("") +
-                "</ul>";
+                    .join("") + "</ul>";
         }
 
         this.shadowRoot.getElementById("btnEliminar").addEventListener("click", async () => {
