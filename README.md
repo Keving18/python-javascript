@@ -61,7 +61,7 @@ Se implementó un sistema básico de autenticación utilizando **Flask**, **SQLi
 
 Además de almacenarse en el archivo `data.json`, todos los productos que se agregan desde el formulario se guardan también en la tabla `products` de la base de datos `users.db`:
 
-Campos de la tabla `products`:
+Campos de la tabla `products`: 
 
 - `id` (PRIMARY KEY AUTOINCREMENT)
 - `nombre`
