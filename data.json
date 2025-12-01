@@ -12,6 +12,20 @@
                     "texto": "Hola, muy buen producto"
                 }
             ]
+        },
+        {
+            "id": 3,
+            "nombre": "iphone 17",
+            "precio": 12000.0,
+            "imagen": "static/uploads\\iphone_17.jfif",
+            "habilitado": true
+        },
+        {
+            "id": 4,
+            "nombre": "s24",
+            "precio": 5000.0,
+            "imagen": "static/uploads\\s24.webp",
+            "habilitado": true
         }
     ]
 }

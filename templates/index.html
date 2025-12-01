@@ -13,6 +13,13 @@
     <header>
         <h1>Gestor de Productos</h1>
         <p>App construida con <strong>Flask + JavaScript</strong></p>
+        <header>
+    <nav>
+        <span>Bienvenido, {{ user }}</span>
+        <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+    </nav>
+</header>
+
     </header>
 
     <section class="panel">
@@ -46,7 +53,7 @@
 
 
     <footer>
-        <p>Curso: Python con JavaScript - Desarrollo y Despliegue. Ing. Francisco Suarez</p>
+        <p>Curso: Python con JavaScript - Desarrollo y Despliegue. Kevin Garcia</p>
     </footer>
 
 </body>

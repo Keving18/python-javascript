@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login / Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Autenticación</h1>
+
+        <!-- Mensajes flash -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="messages">
+              {% for category, message in messages %}
+                <li class="msg msg-{{ category }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <div class="auth-wrapper">
+            <!-- FORMULARIO LOGIN -->
+            <section class="auth-block">
+                <h2>Iniciar sesión</h2>
+                <form method="POST" action="{{ url_for('login') }}">
+                    <input type="hidden" name="action" value="login">
+
+                    <label for="username_login">Usuario</label>
+                    <input type="text" id="username_login" name="username_login" required>
+
+                    <label for="password_login">Contraseña</label>
+                    <input type="password" id="password_login" name="password_login" required>
+
+                    <button type="submit">Entrar</button>
+                </form>
+            </section>
+
+            <!-- FORMULARIO REGISTRO -->
+            <section class="auth-block">
+                <h2>Registrarse</h2>
+                <form method="POST" action="{{ url_for('login') }}">
+                    <input type="hidden" name="action" value="register">
+
+                    <label for="username_reg">Usuario</label>
+                    <input type="text" id="username_reg" name="username_reg" required>
+
+                    <label for="email_reg">Correo</label>
+                    <input type="email" id="email_reg" name="email_reg" required>
+
+                    <label for="password_reg">Contraseña</label>
+                    <input type="password" id="password_reg" name="password_reg" required>
+
+                    <label for="confirm_reg">Confirmar contraseña</label>
+                    <input type="password" id="confirm_reg" name="confirm_reg" required>
+
+                    <button type="submit">Crear cuenta</button>
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
